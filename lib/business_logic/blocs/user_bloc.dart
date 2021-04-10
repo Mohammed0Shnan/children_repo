@@ -71,6 +71,7 @@ despose(){
   register(User user)async {
    UserResponse userResponse =   await _repository.register(user);
     storeToken(userResponse.token);
+    
  return userResponse;
   }
 

@@ -29,9 +29,6 @@ class UserRepository{
   }
 
   register(User user)async {
-    print(user.name);
-     print(user.email);
-      print(user.password);
         try{
       http.Response response = await http.post(signupUrl,body:user.toJson(),
       headers: {
