@@ -36,10 +36,13 @@ class ChildCard extends StatelessWidget {
               onPressed: () {},
             ),
             Spacer(),
-            Padding(
+            Container(
+              alignment: Alignment.centerRight,
+              width: 41 * SizeConfig.widhtMulti,
                 padding: EdgeInsets.all(5),
                 child: Text(
                   child.name,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,

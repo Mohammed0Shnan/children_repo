@@ -141,10 +141,8 @@ class _SignupBodyState extends State<SignupBody> {
                         setState(() {
                           active = !active;
                         });
-                      
-                        userBloC.subject.sink.add(value);
+                      userBloC.subject.sink.add(value);
                         Navigator.pop(context);
-
                       }
                     });
                   },

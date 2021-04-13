@@ -3,6 +3,9 @@ import 'package:child_app/data/models/child.dart';
 import 'package:child_app/presentation/screens/childs/components/child_card.dart';
 
 Container buildListOfChildren(context , List<Child> childs) {
+  childs.forEach((element) {
+    print('${element.id}' + ' , '+ '${element.name}' + ' , '+'${element.points}' + ' , '+'${element.gender}'+' , '+'${element.dob}' );
+  });
   return Container(
     padding: EdgeInsets.only(left: 10, right: 10, top: 25),
     child: ListView.builder(

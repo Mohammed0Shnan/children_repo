@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:child_app/data/models/child_detile_response.dart';
 import 'package:child_app/data/models/item_response.dart';
 import 'package:child_app/data/repositories/item_repository.dart';
 import 'package:rxdart/rxdart.dart';

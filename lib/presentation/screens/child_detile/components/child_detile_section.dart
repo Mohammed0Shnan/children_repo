@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ChildDetileSection extends StatelessWidget {
-  final DateTime date;
+  final String date;
   final String gender;
   final double points;
   const ChildDetileSection({
@@ -46,7 +46,7 @@ class ChildDetileSection extends StatelessWidget {
             RichText(
               text:
                   TextSpan(style: textStyle, text: ' تاريخ الميلاد', children: [
-                TextSpan(text: '  : ${date.day}-${date.month}-${date.year} ')
+                TextSpan(text: '  : $date ')
               ]),
             ),
           ],

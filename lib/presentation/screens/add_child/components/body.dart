@@ -120,6 +120,7 @@ class _BodyState extends State<Body> {
                 RoundedButton(
                   text: 'اضافة',
                   onPress: () {
+                  
                     setState(() {
                       active = !active;
                     });
@@ -127,7 +128,7 @@ class _BodyState extends State<Body> {
                         name: _name.toString(),
                         points: 0.0,
                         gender: _gender.toString(),
-                        dob:_date));
+                        dob:'${_date.year}-${_date.month}-${_date.day}',));
                   },
                 ),
                 SizedBox(

@@ -38,7 +38,7 @@ Future<UserResponse> login(User user)async{
  _subject.sink.add(userResponse);
    storeToken(userResponse.token);
 
-  return UserResponse(token: userResponse.token,error: '',child: Child(name: 'mohammed',points: 100,gender: 'male',dob: DateTime.now(),id: 10));
+  return UserResponse(token: userResponse.token,error: '',child: Child(name: 'mohammed',points: 100,gender: 'male',dob:'2010-10-10',id: 10));
 
   }
 
@@ -64,7 +64,7 @@ despose(){
     //   _subject.add(UserResponse(token: value.toString(),error: null));
    // });
    await Future.delayed(Duration(seconds: 2));
-   _subject.sink.add( UserResponse(token:'fasdfwf',error: '',child:Child(name: 'mohammed',points: 100,gender: 'male',dob: DateTime.now(),id: 10)));
+   _subject.sink.add( UserResponse(token:'fasdfwf',error: '',child:Child(name: 'mohammed',points: 100,gender: 'male',dob:'2010-10-10',id: 10)));
    return UserResponse();
   }
 

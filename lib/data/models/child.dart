@@ -3,7 +3,7 @@ class Child {
   final String name;
   final double points;
   final String gender;
-  final DateTime dob;
+  final String dob;
 
   Child({this.id,this.name,this.points,this.gender,this.dob});
 
@@ -12,7 +12,7 @@ class Child {
   this.name = json['name'],
   this.points = json['points']*1.0,
   this.gender = json['gender'],
-  this.dob = json['dob']
+  this.dob = json['DOB']
   ;
 
 }

@@ -11,7 +11,8 @@ import 'package:flutter/material.dart';
        child:Text(error,
        style: TextStyle(
          fontSize: 20,
-         color: Colors.red   
+         color: Colors.red 
+           
        )
     )
   ) ,
