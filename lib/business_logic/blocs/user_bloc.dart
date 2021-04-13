@@ -78,11 +78,14 @@ class UserBloC {
 
   register(User user) async {
     UserResponse userResponse = await _repository.register(user);
-    storeToken(userResponse.token);
+    
     if (userResponse.error != null && userResponse.error.length > 0) {
       return null;
-    } else
+    } else{
+      storeToken(userResponse.token);
       return userResponse;
+    }
+  
   }
 }
 

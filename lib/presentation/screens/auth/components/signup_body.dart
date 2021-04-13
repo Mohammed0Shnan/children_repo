@@ -19,7 +19,7 @@ class SignupBody extends StatefulWidget {
 
 class _SignupBodyState extends State<SignupBody> {
   bool active = true;
-  String _email, _password, _confirmPass,_name;
+  String _email, _password, _confirmPass, _name;
   @override
   Widget build(BuildContext context) {
     return Background(
@@ -123,38 +123,40 @@ class _SignupBodyState extends State<SignupBody> {
                 RoundedButton(
                   text: 'تسجيل',
                   onPress: () async {
-                    if (_confirmPass != _password) {
+                    if (_confirmPass != _password || _name.isEmpty || _email.isEmpty || _password.isEmpty || _confirmPass.isEmpty) {
                       buildErrorWidget(context, error: 'خطأ بالحقول المدخلة ');
+                    } else {
+                      setState(() {
+                        active = !active;
+                      });
+
+                      await userBloC
+                          .register(User(
+                              name: _name, email: _email, password: _password))
+                          .then((value) {
+                        if (value == null) {
+                          buildErrorWidget(context, error: '');
+                          setState(() {
+                            active = !active;
+                          });
+                        } else {
+                          setState(() {
+                            active = !active;
+                          });
+                          userBloC.subject.sink.add(value);
+                          Navigator.pop(context);
+                        }
+                      });
                     }
-                    setState(() {
-                      active = !active;
-                    });
-                    await userBloC
-                        .register(User(name: _name,email: _email, password: _password))
-                        .then((value) {
-                      if (value == null) {
-                        buildErrorWidget(context, error: '');
-                        setState(() {
-                          active = !active;
-                        });
-                      } else {
-                        setState(() {
-                          active = !active;
-                        });   
-                      userBloC.subject.sink.add(value);
-                        Navigator.pop(context);
-                      }
-                    });
                   },
                 ),
                 RegisterationMethods()
               ],
             ),
           ),
-           (active) ? SizedBox.shrink() : Center(child: buildLoadingWidget())
+          (active) ? SizedBox.shrink() : Center(child: buildLoadingWidget())
         ],
       ),
     );
   }
 }
- 
